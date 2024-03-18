@@ -1,11 +1,17 @@
 <template>
-    <v-app-bar :elevation="10" density="comfortable" theme="dark">
+    <v-app-bar :elevation="10" density="comfortable" theme="dark" color="pink-accent-3">
         <template v-slot:prepend>
             <v-btn id="btn_navigation_drawer" :min-width="25" rounded="lg" density="comfortable" size="large" variant="outlined"  @click="overlay = !overlay">
                     <v-icon icon="mdi-menu" size="large"></v-icon>
             </v-btn>
         </template>        
-        <v-app-bar-title>Gerenciador de arquivos</v-app-bar-title>
+        <v-app-bar-title>
+            <div class="d-flex">
+                <h6 class="text-h6 font-weight-light">Stream</h6>
+                <h5 class="text-h5 font-italic font-weight-black">Beats</h5>
+            </div>
+            
+        </v-app-bar-title>
     </v-app-bar>
     <v-overlay activator="#btn_navigation_drawer">
         <v-layout>
