@@ -15,6 +15,17 @@
               Streaming
             </v-chip>
           </template>
+          <v-card-item class="mb-2">
+
+            <v-card-title>
+              <h4 prepend-icon="$vuetify" class="text-body-1 text-black">Escutando: Chemical - Post Malone</h4>
+            </v-card-title>
+            <template v-slot:prepend>
+              <v-icon icon="mdi-music">
+              
+              </v-icon>
+            </template>
+          </v-card-item>
         </v-card>
       </v-col>
     </v-row>
