@@ -3,7 +3,7 @@
     <h1 class="text-body-1">Teste para card de streamer online</h1>
     <v-divider class="ma-5"></v-divider>
     <v-row>
-      <v-col cols="12" sm="2" >
+      <v-col cols="12" sm="3" >
         <CardStreamer />
       </v-col>
     </v-row>

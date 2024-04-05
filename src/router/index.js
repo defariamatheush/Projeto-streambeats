@@ -1,10 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import Gerenciadordeplaylists from '../views/Gerenciadordeplaylists.vue'
 const routes = [
   {
     path: '/home',
     name: 'HomeView',
     component: Home
+  },
+  {
+    path: '/gerenciarplaylists',
+    name: 'Gerenciadordeplaylists',
+    component: Gerenciadordeplaylists
   }
 ]
 

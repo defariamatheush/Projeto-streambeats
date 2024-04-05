@@ -6,7 +6,6 @@
                     Online
                 </v-chip>
             </v-list-item>
-
         </v-list>
         <v-list nav>
             <v-divider class="ma-2"></v-divider>
@@ -15,6 +14,12 @@
                     <v-icon class="text-black" icon="mdi-home"></v-icon>
                 </template>
                 <v-list-item-title class="text-body-1 text-black">Home</v-list-item-title>
+            </v-list-item>
+            <v-list-item  variant="outlined" link to="/gerenciarplaylists">
+                <template v-slot:prepend>
+                    <v-icon class="text-black" icon="mdi-playlist-music"></v-icon>
+                </template>
+                <v-list-item-title class="text-body-1 text-black">Gerenciar playlists</v-list-item-title>
             </v-list-item>
         </v-list>
         <template v-slot:append>
