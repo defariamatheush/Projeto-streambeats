@@ -2,8 +2,8 @@
     <v-container>
         <v-row justify="space-around">
             <v-col cols="auto">
-                <v-chip-group selected-class="text-primary" multiple mandatory>
-                <v-chip v-for="tag in tags" :key="tag[1]">
+                <v-chip-group selected-class="text-red"  multiple mandatory>
+                <v-chip v-for="tag in tags" :key="tag[1]" variant="outlined">
                     {{ tag[0] }}
                 </v-chip>
                 </v-chip-group>
@@ -17,7 +17,14 @@
                 <v-btn size="large" icon="mdi-magnify" variant="outlined"></v-btn>
             </v-col>
         </v-row>
-        <ListaMusicasPesquisadas />
+        <v-row justify="center" class="d-flex justify-center align-content-center w-50" >
+            <v-col cols="6">
+                <ListaMusicasPesquisadas />
+            </v-col>
+            <v-col cols="6">
+                <ListaMusicasPesquisadas />
+            </v-col>
+        </v-row>
     </v-container>
 </template>
 
