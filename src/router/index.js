@@ -1,16 +1,29 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import Gerenciadordeplaylists from '../views/Gerenciadordeplaylists.vue'
+import HomeLogged from '@/views/HomeLogged.vue'
+import Lancamentos from '@/views/LancamentosView.vue'
+import TiposLancamento from '@/views/TiposLancamento.vue'
+
 const routes = [
   {
-    path: '/home',
+    path: '/',
     name: 'HomeView',
     component: Home
   },
   {
-    path: '/gerenciarplaylists',
-    name: 'Gerenciadordeplaylists',
-    component: Gerenciadordeplaylists
+    path: '/Home/:code',
+    name: 'HomeViewLogged',
+    component: HomeLogged
+  },
+  {
+    path: '/lancamentos',
+    name: 'LancamentosView',
+    component: Lancamentos
+  },
+  {
+    path: '/lancamentos/tipos',
+    name: 'TiposLancamentoView',
+    component: TiposLancamento
   }
 ]
 
