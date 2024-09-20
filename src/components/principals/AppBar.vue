@@ -1,38 +1,48 @@
 <template>
     <div>
-        <v-app-bar :elevation="10" density="comfortable" theme="dark" color="pink-accent-3">
+        <v-app-bar :elevation="10" density="comfortable" theme="" color="black">
             <template v-slot:prepend>
-                <v-btn id="btn_navigation_drawer" :min-width="25" rounded="lg" density="comfortable" size="large" variant="outlined"  @click="overlay = !overlay">
-                        <v-icon icon="mdi-menu" size="large"></v-icon>
+                <v-btn id="btn_navigation_drawer" icon   density="compact" size="large" :variant="overlay ? 'tonal' : 'text'"  @click="overlay = !overlay">
+                    <v-icon icon="mdi-menu" size="small"></v-icon>
                 </v-btn>
-            </template>        
-            <v-app-bar-title to="/">
-                <div class="d-flex">
-                    <h6 class="text-h6 text-white font-weight-light">CEM</h6>
-                    <h5 class="text-h5 text-white font-italic font-weight-black">Conto</h5>
-                </div>
-            </v-app-bar-title>
+                <v-img style="cursor: pointer;" @click="this.$router.push({path:'/'})" src="../../assets/logo-branca.png" width="100"></v-img>
+            </template>
+            <template v-slot:append>
+                <v-list-item append-avatar="https://randomuser.me/api/portraits/women/85.jpg" :variant="overlayProfile ? 'tonal' : 'text'" @click="overlayProfile = !overlayProfile" class="text-body-2" title="Sandra Adams">
+                    <template v-slot:subtitle>
+                        <div class="ml-auto">
+                            <span>R$85,00</span>
+                        </div>
+                    </template>
+                </v-list-item>
+            </template>
         </v-app-bar>
-        <v-overlay activator="#btn_navigation_drawer">
-            <v-layout>
-                <NavigationDrawer/>
-            <v-main class="h-screen"></v-main>
-            </v-layout>
-        </v-overlay>
+        <NavigationDrawer  @closeDrawer="closeDrawer"  :drawer="overlay"/>
+        <NavigationDrawerProfile @closeDrawer="closeDrawerProfile" :drawer="overlayProfile"/>
     </div>
 </template>
 
 <script>
 import NavigationDrawer from "./NavigationDrawer.vue"
-
+import NavigationDrawerProfile from "./NavigationDrawerProfile.vue"
 export default ({
     data() {
         return{
-            overlay: false
+            overlay: false,
+            overlayProfile:false
         }
     },
     components:{
-        NavigationDrawer
+        NavigationDrawer,
+        NavigationDrawerProfile
+    },
+    methods:{
+      closeDrawerProfile(drawer){
+        this.overlayProfile = drawer
+      },
+      closeDrawer(drawer){
+        this.overlay = drawer
+      }
     }
 })
 </script>

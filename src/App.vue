@@ -3,9 +3,16 @@
     <AppBar/>
     <v-content>
       <v-main>
-        <v-container class="fill-height" fluid>
-          <router-view/>
-        </v-container>
+        <template v-if="this.$vuetify.display.smAndDown == false">
+          <v-container class="fill-height" fluid>
+            <router-view/>
+          </v-container>
+        </template>
+        <template v-else>
+          <div>
+            teste
+          </div>
+        </template>
       </v-main>
     </v-content>  
   </v-app>
